@@ -1,23 +1,54 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * main - check the code for ALX School students.
+ * str_concat - Concatenate two strings of any size
+ * @s1: the first string to concatenate
+ * @s2: the second string to concatenate
  *
- * Return: Always 0.
+ * Return: the two strings concatenated
  */
-int main(void)
-{
-char *s;
 
-s = str_concat("Betty ", "Holberton");
-if (s == NULL)
+char *str_concat(char *s1, char *s2)
 {
-printf("failed\n");
-return (1);
-}
-printf("%s\n", s);
-free(s);
-return (0);
-}
+	int i = 0, j = 0, k = 0, l = 0;
+	char *s;
+
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[i])
+		i++;
+
+	while (s2[j])
+		j++;
+
+	l = i + j;
+	s = malloc((sizeof(char) * l) + 1);
+	
+	if (s == NULL)
+		return (NULL);
+
+	j = 0
+
+	while (k < l)
+	{
+		if (k <= i)
+			s[k] = s1[k];
+
+		if (k >= 1)
+		{
+		        s[k] = s2[j];
+		        j++;
+		}
+	        
+	        k++;
+	}
+
+        s[k] = '\0';
+        return (s);
+}	
