@@ -1,11 +1,12 @@
-#include "main.h"
+#include <fcntl.h>
+#include <unistd.h>
 #include <stdio.h>
 
 /**
  * error_file - checks if files can be opened.
  * @file_from: file_from.
  * @file_to: file_to.
- * @argv: aeguments vector.
+ * @argv: arguments vector.
  * Return: no return.
  */
 void error_file(int file_from, int file_to, char *argv[])
@@ -36,7 +37,6 @@ if (argc != 3)
 {
 dprintf(STDERR_FILENO, "%s\n", "usage: cp file_from file_to");
 exit(97);
-
 }
 
 file_from = open(argv[1], O_RDONLY);
