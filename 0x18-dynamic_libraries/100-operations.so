@@ -1,4 +1,8 @@
 #!/bin/bash
+gcc -Wall -Werror -Wextra -pedantic -fPIC -c *.c
+gcc -shared -o libdynamic.so *.o
+nm -D --defined-only libdynamic.so
+
 import random
 import ctypes
 
